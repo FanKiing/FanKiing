@@ -42,4 +42,4 @@
 
 ---
 
-✨ _“May wisdom illuminate our path.”_ ✨
+✨ _“May Chaos Take The World.”_ ✨
