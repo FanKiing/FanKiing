@@ -26,15 +26,6 @@
 
 ---
 
-## 📊 GitHub Stats
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=FanKiing&show_icons=true&theme=tokyonight" alt="GitHub stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=FanKiing&theme=tokyonight" alt="GitHub Streak" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=FanKiing&layout=compact&theme=tokyonight" alt="Top Languages" />
-</p>
-
----
-
 ## 🌐 Connect With Me
 <p align="center">
   <a href="https://www.linkedin.com/in/yasser-essayh/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
