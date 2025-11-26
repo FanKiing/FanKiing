@@ -7,9 +7,7 @@
 ---
 
 ## 🚀 About Me
-- 🌱 Currently improving my skills in **Full-Stack Development**
-- 🛠 Building **web apps** with **PHP, MySQL, and React**
-- 🎯 Goal: Contribute to open-source & collaborate on impactful projects
+*******************************************************************************
 - 🎮 Fun fact: I love exploring the lore behind **Soulsborne games**
 
 ---
