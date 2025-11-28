@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Yasser!
 
-💻 Full-Stack Developer | ⚡ PHP • React • MySQL  
+
 
 <img src="https://raw.githubusercontent.com/rajpratyush/rajpratyush/master/me.gif" width="400px" align="right" alt="Coding animation" />
 
@@ -13,9 +13,7 @@
 ---
 
 ## 🧰 Tech Stack
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,php,mysql,react,nodejs,git,github,vscode,boostrap" />
-</p>
+
 
 ---
 
