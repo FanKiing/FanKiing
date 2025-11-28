@@ -31,10 +31,7 @@
 
 ---
 
-## 🎉 Fun Animation
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=4000&pause=1000&color=F7A21B&center=true&vCenter=true&width=500&lines=Full+Stack+Developer;PHP+%7C+React+%7C+MySQL;Always+Learning+New+Things;Soulsborne+Lore+Explorer+⚔️" alt="Typing SVG" />
-</p>
+
 
 ---
 
