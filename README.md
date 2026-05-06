@@ -42,9 +42,5 @@ I am a passionate developer focused on building functional and scalable web appl
 
 ---
 
-<p align="center">
-  <i>"Consistently learning and building."</i>
-</p>
-
 
 ✨ _“𝖂𝖔𝖗𝖐 𝖎𝖓 𝖘𝖎𝖑𝖊𝖓𝖈𝖊, 𝖑𝖊𝖙 𝖞𝖔𝖚𝖗 𝖘𝖚𝖈𝖈𝖊𝖘𝖘 𝖇𝖊 𝖞𝖔𝖚𝖗 𝖓𝖔𝖎𝖘𝖊.”_ ✨
