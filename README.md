@@ -1,4 +1,13 @@
-# 👑 Yassir | The Dragon of Code 🐉
+<p align="center">
+  <img src="https://awoiaf.westeros.org/images/thumb/1/1e/House_Targaryen.svg/250px-House_Targaryen.svg.png" width="100px">
+</p>
+
+<h1 align="center">👑 Yassir · The Rogue Developer 🐉</h1>
+
+<p align="center">
+  <i>"I don't follow the rules. I rewrite them — in code and in fire."</i><br/>
+  <b>～ Daemon Targaryen energy, Laravel workflow ～</b>
+</p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/rajpratyush/rajpratyush/master/me.gif" width="400px" alt="Coding dragon">
@@ -6,90 +15,116 @@
 
 ---
 
-## 🐉 *"Fire and Blood, Code and Logic"*
+## 📜 About the Dragon
 
-> *I am not just a developer. I am a storyteller who writes in PHP, dreams in JavaScript, and builds empires with Laravel.*
+> **Yassir.** Not Yasser. The "s" is silent to the world, but loud in my commits.
 
----
+I move like Daemon Targaryen:  
+⚔️ **Sharp** in logic — my code has no mercy for bugs.  
+🔥 **Fierce** with standards — I respect deadlines and clean architectures.  
+🐉 **Loyal** to my stack — but ready to burn everything for a better solution.
 
-## 📖 About Me
+I don't just build apps.  
+I forge kingdoms of code where **UX is law** and **performance is honor**.
 
-I’m **Yassir** (not Yasser — the “s” matters, just like the second “r” in Targaryen 🔥).
-
-I am a **Full-Stack Developer in the making**, but beyond the code, I am a lover of **epic storytelling** — the kind that shapes worlds, breaks thrones, and changes destinies.
-
-🎮 I play **story-driven games** — where every choice matters.  
-📚 I read **rich, dark, political fantasies** — where honor is a flaw and power is a curse.  
-🔥 My favorite work of all time: ***A Song of Ice and Fire*** by George R. R. Martin.
-
-Winter is coming. But so is my next commit.
+Winter is coming. So is my deployment.
 
 ---
 
-## 🛠️ My Arsenal (The Tools of the Dragon)
+## 🧠 Mind & Soul
 
-### 🧠 Languages & Frameworks
+🎮 **Story-driven games** — where choices bleed into consequences.  
+📖 **A Song of Ice and Fire** — the only gospel I kneel to.  
+🎭 **Dark fantasy & political intrigue** — betrayal tastes better with good UI.
 
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+> *"A developer who reads George R. R. Martin doesn’t write functions — he writes betrayals, plot twists, and scalable migrations."*
 
-### 🎨 Frontend
+---
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Blade](https://img.shields.io/badge/Blade-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white)
+## 🛠️ Arsenal of the Rogue Prince
 
-### 🧰 Tools & Versioning
+### 🧩 Core Languages & Frameworks
 
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![VS Code](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+<p>
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+</p>
+
+### 🎨 Frontend (Where fire meets design)
+
+<p>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Blade-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white"/>
+</p>
+
+### ⚙️ Laravel Ecosystem (My dragonstone)
+
+<p>
+  <img src="https://img.shields.io/badge/Livewire-4E56A6?style=for-the-badge&logo=livewire&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Reverb-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Telescope-FF2D20?style=for-the-badge&logo=laravel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/SweetAlert-7B3F00?style=for-the-badge&logo=sweetalert&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=black"/>
+</p>
+
+### 🧰 Dev Tools & Workflow
+
+<p>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  <img src="https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"/>
+</p>
 
 ### 🗄️ Databases
 
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-![MONGODB](https://img.shields.io/badge/NoSQL-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+<p>
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
+</p>
 
-### 📦 Productivity
+### 📦 Productivity (The Maester’s corner)
 
-![Word](https://img.shields.io/badge/Microsoft_Word-2B579A?style=for-the-badge&logo=microsoft-word&logoColor=white)
-![Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
-![PowerPoint](https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=for-the-badge&logo=microsoft-powerpoint&logoColor=white)
+<p>
+  <img src="https://img.shields.io/badge/Microsoft_Word-2B579A?style=for-the-badge&logo=microsoft-word&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=for-the-badge&logo=microsoft-powerpoint&logoColor=white"/>
+</p>
 
 ---
 
-## 🐉 Current Projects
+## 🐉 Current Campaigns
 
 | Project | Description |
 |---------|-------------|
-| **Vitecma** 🚗 | Technical Inspection Management System built with Laravel 11, Blade, TailwindCSS, and Reverb for real-time updates. |
-| **Portfolio** 🌐 | A personal kingdom where I showcase my work, my journey, and my fire. |
+| **Vitecma** 🚗 | Technical inspection system — Laravel 11, Blade, Tailwind, Reverb, SweetAlert, GSAP. Real-time, ruthless, efficient. |
+| **Portfolio** 🌐 | My digital throne room. Clean, dark, dragon‑approved. |
 
 ---
 
-## 📜 A Song of Code and Ice
+## 🔥 The Daemon Vibe — My Code of Conduct
 
-When I’m not coding, I’m either:
+- ✅ **Brutal honesty** in reviews — your code will be better after me.  
+- ✅ **Zero tolerance for spaghetti logic** — structure or die.  
+- ✅ **Loyal to the team** — but I will challenge bad decisions like a true rogue prince.  
+- ✅ **Obsessed with UX** — because a confused user is a lost kingdom.
 
-- 🎮 Lost in a **story-rich game** (choices matter, people die, dragons rise)
-- 📖 Reading **grimdark fantasy** (betrayals, politics, and morally grey characters)
-- 🎧 Listening to epic soundtracks that make every `git push` feel like a conquest
-
-> *“A developer who reads fantasy doesn’t just write functions — he writes destinies.”*
+> *“I don't write 'clean code' for fun. I write it because chaos is a ladder — but only for the disciplined.”*
 
 ---
 
-## 🌐 Find the Dragon
+## 🌐 Find the Dragon (He doesn't hide)
 
-<p align="left">
+<p>
   <a href="https://www.linkedin.com/in/yasser-essayh">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
@@ -101,11 +136,12 @@ When I’m not coding, I’m either:
 ---
 
 <p align="center">
-  <img src="https://awoiaf.westeros.org/images/thumb/1/1e/House_Targaryen.svg/250px-House_Targaryen.svg.png" width="120px" alt="House Targaryen">
+  <img src="https://awoiaf.westeros.org/images/thumb/1/1e/House_Targaryen.svg/250px-House_Targaryen.svg.png" width="100px">
   <br/>
-  <i>“I am the blood of the dragon. And I will code a better world.”</i>
+  <i>“I do not wait for the perfect commit. I create it.”</i><br/>
+  <b>⚔️ Blood of the dragon. Fire of the keyboard. ⚔️</b>
 </p>
 
----
-
-✨ *Winter is coming… but my deployment is already live.* ✨
+<p align="center">
+  ✨ <i>Winter is coming… but my CI/CD is already live.</i> ✨
+</p>
