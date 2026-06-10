@@ -136,7 +136,7 @@ Winter is coming. So is my deployment.
 ---
 
 <p align="center">
-  <img src="https://observer.com/wp-content/uploads/sites/2/2020/10/Screen-Shot-2020-10-06-at-10.03.55-AM.png?resize=635,351" width="100px">
+  <img src="https://awoiaf.westeros.org/images/thumb/1/1e/House_Targaryen.svg/250px-House_Targaryen.svg.png" width="180px">
   <br/>
   <i>"I do not wait for the perfect commit. I create it."</i><br/>
   <b>⚔️ Blood of the dragon. Fire of the keyboard. ⚔️</b>
