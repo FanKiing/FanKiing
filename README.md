@@ -56,7 +56,7 @@ Winter is coming. But so is my next commit.
 ### 🗄️ Databases
 
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-![NoSQL](https://img.shields.io/badge/NoSQL-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![MONGODB](https://img.shields.io/badge/NoSQL-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ### 📦 Productivity
 
@@ -101,7 +101,7 @@ When I’m not coding, I’m either:
 ---
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Targaryen_Sigil.svg/800px-Targaryen_Sigil.svg.png" width="120px" alt="House Targaryen">
+  <img src="https://awoiaf.westeros.org/images/thumb/1/1e/House_Targaryen.svg/250px-House_Targaryen.svg.png" width="120px" alt="House Targaryen">
   <br/>
   <i>“I am the blood of the dragon. And I will code a better world.”</i>
 </p>
