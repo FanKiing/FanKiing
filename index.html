@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yassir of House Code</title>
+<meta name="description" content="Yassir Essayh — Laravel and React developer. Fire, blood and clean architecture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cinzel:wght@500;700;900&family=JetBrains+Mono:wght@400;600&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+  :root {
+    color-scheme: dark;
+    --obsidian: #0d0a0c;
+    --soot: #16111a;
+    --soot-2: #1f1822;
+    --blood: #a3161b;
+    --flame: #e8702a;
+    --gold: #c9a45c;
+    --bone: #e9e1d3;
+    --ash: #948a95;
+    --line: rgba(201, 164, 92, 0.22);
+
+    --display: "Cinzel", "Trajan Pro", Georgia, serif;
+    --body: "Spectral", Georgia, "Times New Roman", serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+    --arabic: "Aref Ruqaa", "Amiri", "Noto Naskh Arabic", serif;
+
+    --wrap: 1080px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--obsidian);
+    color: var(--bone);
+    font: 400 1.075rem/1.7 var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--gold); text-underline-offset: 3px; }
+  a:hover { color: var(--flame); }
+  :focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; border-radius: 2px; }
+  ::selection { background: var(--blood); color: var(--bone); }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: 20px; }
+  .wrap > *, .hero .wrap > div, .ledger > *, .soul > *, .facts > * { min-width: 0; }
+
+  /* ---------- top bar ---------- */
+  .bar {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+    background: rgba(13, 10, 12, 0.82);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+  .bar .mark { font: 700 0.95rem var(--display); letter-spacing: 0.18em; color: var(--bone); text-decoration: none; }
+  .bar nav { display: flex; gap: 22px; flex-wrap: wrap; }
+  .bar nav a { font: 500 0.78rem var(--display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ash); text-decoration: none; }
+  .bar nav a:hover { color: var(--gold); }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+  .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .hero::after {
+    content: ""; position: absolute; inset: auto 0 0 0; height: 45%;
+    background: radial-gradient(ellipse 70% 100% at 50% 100%, rgba(163, 22, 27, 0.28), transparent 70%);
+    pointer-events: none;
+  }
+  .hero .wrap {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1.35fr 1fr; align-items: center; gap: 48px;
+    padding-block: 88px 96px;
+  }
+  .eyebrow { font: 500 0.78rem var(--display); letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin: 0 0 18px; }
+  h1 {
+    font: 900 clamp(3.2rem, 9vw, 6.6rem)/0.92 var(--display);
+    letter-spacing: 0.02em; margin: 0;
+    background: linear-gradient(180deg, var(--bone) 30%, #b9a88f 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  h1 .silent { position: relative; display: inline-block; color: var(--ash); -webkit-text-fill-color: var(--ash); opacity: 0.55; }
+  h1 .silent::after {
+    content: ""; position: absolute; left: -4%; right: -4%; top: 52%; height: 0.08em;
+    background: var(--blood); transform: rotate(-8deg);
+  }
+  .sub { font: 600 clamp(1.05rem, 2.2vw, 1.3rem) var(--display); letter-spacing: 0.08em; color: var(--bone); margin: 22px 0 0; }
+  .sub span { color: var(--blood); padding-inline: 0.35em; }
+  .lede { max-width: 34em; color: var(--ash); margin: 20px 0 0; font-size: 1.12rem; }
+  .lede em { color: var(--bone); }
+  .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font: 700 0.8rem var(--display); letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 14px 22px; text-decoration: none; cursor: pointer;
+    border: 1px solid var(--gold); color: var(--gold); background: transparent;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .btn:hover { background: var(--gold); color: var(--obsidian); }
+  .btn.fire { background: var(--blood); border-color: var(--blood); color: var(--bone); }
+  .btn.fire:hover { background: var(--flame); border-color: var(--flame); color: var(--obsidian); box-shadow: 0 0 28px rgba(232, 112, 42, 0.45); }
+
+  .seal { justify-self: center; width: min(360px, 100%); aspect-ratio: 1; max-width: 100%; }
+  .seal svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .seal .ring-text { animation: turn 60s linear infinite; transform-origin: 200px 200px; }
+  @keyframes turn { to { transform: rotate(360deg); } }
+
+  /* ---------- sections ---------- */
+  section { padding-block: 96px; border-bottom: 1px solid var(--line); }
+  .head { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: baseline; margin-bottom: 44px; }
+  .head .tag { font: 500 0.78rem var(--display); letter-spacing: 0.24em; text-transform: uppercase; color: var(--blood); }
+  h2 { font: 700 clamp(1.9rem, 4.4vw, 3rem)/1.1 var(--display); letter-spacing: 0.03em; margin: 0; text-wrap: balance; }
+  .body-col { margin-left: 260px; max-width: 40em; }
+  .body-col p { margin: 0 0 1.1em; }
+  .body-col p:first-child::first-letter {
+    float: left; font: 900 4.2rem/0.8 var(--display); color: var(--blood);
+    padding: 0.08em 0.12em 0 0;
+  }
+  .pull {
+    margin: 36px 0 0; padding: 4px 0 4px 22px; border-left: 2px solid var(--blood);
+    font-style: italic; color: var(--bone); font-size: 1.2rem;
+  }
+
+  /* chronicle facts */
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 48px 0 0 260px; background: var(--line); border: 1px solid var(--line); }
+  .facts div { background: var(--obsidian); padding: 20px 22px; }
+  .facts dt { font: 500 0.72rem var(--display); letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); }
+  .facts dd { margin: 6px 0 0; font: 600 1.05rem var(--body); color: var(--bone); }
+
+  /* arsenal ledger */
+  .ledger { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 56px; margin-left: 260px; }
+  .ledger .row { border-top: 1px solid var(--line); padding-block: 20px 22px; }
+  .ledger h3 { font: 700 0.95rem var(--display); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin: 0 0 4px; }
+  .ledger .note { font-style: italic; color: var(--ash); font-size: 0.95rem; margin: 0 0 12px; }
+  .ledger ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .ledger li { font: 400 0.84rem var(--mono); padding: 4px 10px; background: var(--soot); border: 1px solid var(--soot-2); color: var(--bone); }
+  .ledger li.main { border-color: rgba(163, 22, 27, 0.6); color: #f3d9c9; }
+
+  /* code of conduct */
+  .tenets { list-style: none; margin: 0 0 0 260px; padding: 0; display: grid; gap: 0; counter-reset: t; }
+  .tenets li { display: grid; grid-template-columns: 70px 1fr; gap: 20px; padding-block: 24px; border-top: 1px solid var(--line); counter-increment: t; }
+  .tenets li::before { content: counter(t, upper-roman) "."; font: 700 1.3rem var(--display); color: var(--blood); }
+  .tenets b { display: block; font: 700 1.2rem var(--display); letter-spacing: 0.04em; color: var(--bone); margin-bottom: 4px; }
+  .tenets span { color: var(--ash); }
+
+  /* dracarys terminal */
+  .forge { margin-left: 260px; }
+  .forge p.intro { color: var(--ash); max-width: 38em; margin: 0 0 24px; }
+  .term { background: #0a0709; border: 1px solid var(--soot-2); box-shadow: 0 30px 80px -40px rgba(163, 22, 27, 0.55); }
+  .term .top { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--soot-2); }
+  .term .top i { width: 10px; height: 10px; border-radius: 50%; background: var(--soot-2); }
+  .term .top i:first-child { background: var(--blood); }
+  .term .top small { margin-left: 10px; font: 400 0.78rem var(--mono); color: var(--ash); }
+  .term pre { margin: 0; padding: 22px 20px 26px; font: 400 0.9rem/1.85 var(--mono); overflow-x: auto; white-space: pre; }
+  .term .prompt { color: var(--gold); }
+  .term .dim { color: var(--ash); }
+  .term .bug { display: block; color: #e7a6a0; transition: color 0.5s, text-shadow 0.5s, opacity 0.8s; }
+  .term .bug.burning { color: var(--flame); text-shadow: 0 0 10px var(--flame), 0 0 22px var(--blood); }
+  .term .bug.ash { color: #4a4249; text-decoration: line-through; text-shadow: none; }
+  .term .ok { color: #d7b56d; }
+  .forge .actions { margin-top: 22px; }
+
+  /* mind & soul */
+  .soul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-left: 260px; }
+  .soul h3 { font: 700 1.05rem var(--display); letter-spacing: 0.06em; margin: 0 0 8px; color: var(--gold); }
+  .soul p { margin: 0; color: var(--ash); }
+
+  /* raven */
+  .raven { margin-left: 260px; display: grid; gap: 18px; }
+  .raven .line { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-block: 18px; border-top: 1px solid var(--line); }
+  .raven .k { width: 110px; font: 500 0.75rem var(--display); letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); }
+  .raven .v { font: 600 1.15rem var(--body); color: var(--bone); user-select: all; word-break: break-all; }
+  .raven button { font: 600 0.72rem var(--display); letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 12px; background: transparent; color: var(--gold); border: 1px solid var(--line); cursor: pointer; }
+  .raven button:hover { border-color: var(--gold); }
+
+  footer { padding-block: 64px 80px; text-align: center; }
+  footer .ar { font: 700 2.4rem/1 var(--arabic); color: var(--blood); margin: 0 0 12px; }
+  footer p { margin: 0; color: var(--ash); font-style: italic; }
+  footer small { display: block; margin-top: 18px; font: 400 0.75rem var(--mono); color: #5d545d; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .hero .wrap { grid-template-columns: 1fr; padding-block: 56px 64px; gap: 36px; }
+    .seal { width: min(260px, 70%); order: -1; justify-self: start; }
+    .head { grid-template-columns: 1fr; gap: 10px; }
+    .body-col, .facts, .ledger, .tenets, .forge, .soul, .raven { margin-left: 0; }
+    .ledger { grid-template-columns: 1fr; }
+    .soul { grid-template-columns: 1fr; gap: 28px; }
+    section { padding-block: 72px; }
+  }
+  @media (max-width: 560px) {
+    .bar nav { display: none; }
+    .facts { grid-template-columns: 1fr; }
+    .tenets li { grid-template-columns: 44px 1fr; gap: 12px; }
+    .term pre { font-size: 0.78rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .seal .ring-text { animation: none; }
+    .term .bug { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#top">YASSIR</a>
+    <nav aria-label="Sections">
+      <a href="#chronicle">Chronicle</a>
+      <a href="#arsenal">Arsenal</a>
+      <a href="#forge">Forge</a>
+      <a href="#raven">Raven</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <canvas id="embers" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Full-stack developer · Laravel &amp; React</p>
+        <h1>Ya<span class="silent">s</span>sir</h1>
+        <p class="sub">The Rogue Developer<span>·</span>Blood of the Dragon</p>
+        <p class="lede">
+          Not Yasser. The <em>s</em> is silent to the world, but loud in my commits.
+          I build Laravel back ends and React front ends where <em>UX is law</em>
+          and <em>performance is honor</em>.
+        </p>
+        <div class="actions">
+          <a class="btn fire" href="#forge">Dracarys</a>
+          <a class="btn" href="#raven">Send a raven</a>
+        </div>
+      </div>
+
+      <div class="seal" aria-label="Seal of Yassir">
+        <svg viewBox="0 0 400 400" role="img" aria-labelledby="sealTitle">
+          <title id="sealTitle">A round seal with the name Yassir written in Arabic calligraphy</title>
+          <defs>
+            <path id="ringPath" d="M200,200 m-150,0 a150,150 0 1,1 300,0 a150,150 0 1,1 -300,0"/>
+            <radialGradient id="sealFill" cx="50%" cy="45%" r="60%">
+              <stop offset="0%" stop-color="#2a0f13"/>
+              <stop offset="100%" stop-color="#0d0a0c"/>
+            </radialGradient>
+          </defs>
+          <circle cx="200" cy="200" r="190" fill="none" stroke="#c9a45c" stroke-opacity="0.35" stroke-width="1"/>
+          <circle cx="200" cy="200" r="176" fill="url(#sealFill)" stroke="#c9a45c" stroke-width="2"/>
+          <circle cx="200" cy="200" r="124" fill="none" stroke="#c9a45c" stroke-opacity="0.5" stroke-width="1"/>
+          <g class="ring-text">
+            <text fill="#c9a45c" font-family="Cinzel, Georgia, serif" font-size="17" font-weight="700" letter-spacing="6">
+              <textPath href="#ringPath">FIRE AND BLOOD ✦ CLEAN CODE ✦ FIRE AND BLOOD ✦ CLEAN CODE ✦</textPath>
+            </text>
+          </g>
+          <text x="200" y="222" text-anchor="middle" fill="#e9e1d3" font-family="'Aref Ruqaa', 'Amiri', serif" font-size="92" font-weight="700">ياسر</text>
+          <text x="200" y="272" text-anchor="middle" fill="#a3161b" font-family="Cinzel, Georgia, serif" font-size="13" font-weight="700" letter-spacing="5">EST. IN FIRE</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="chronicle">
+    <div class="wrap">
+      <div class="head">
+        <span class="tag">The Chronicle</span>
+        <h2>A maester's record of the rogue prince</h2>
+      </div>
+      <div class="body-col">
+        <p>
+          I move like Daemon Targaryen: sharp in logic, fierce with standards,
+          loyal to my stack and ready to burn everything down for a better solution.
+          I don't just build apps. I forge small kingdoms of code, with clean
+          architecture at the walls and a user who never feels lost inside them.
+        </p>
+        <p>
+          My home is the Laravel ecosystem, with Livewire and Reverb for real-time work
+          and Telescope keeping watch. On the other side of the Narrow Sea, React and
+          Redux Toolkit run the front end, with GSAP when an interface needs to move.
+        </p>
+        <blockquote class="pull">“Chaos is a ladder, but only for the disciplined.”</blockquote>
+      </div>
+      <dl class="facts">
+        <div><dt>Seat</dt><dd>Laravel · Dragonstone</dd></div>
+        <div><dt>Allegiance</dt><dd>React · Redux Toolkit</dd></div>
+        <div><dt>House words</dt><dd>Structure or die</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="arsenal">
+    <div class="wrap">
+      <div class="head">
+        <span class="tag">The Arsenal</span>
+        <h2>Steel, flame and a few scrolls</h2>
+      </div>
+      <div class="ledger">
+        <div class="row">
+          <h3>Core</h3>
+          <p class="note">The blades I draw first.</p>
+          <ul>
+            <li class="main">PHP</li><li class="main">Laravel</li><li class="main">JavaScript</li>
+            <li class="main">React</li><li>Redux Toolkit</li><li>Node.js</li><li>Python</li>
+          </ul>
+        </div>
+        <div class="row">
+          <h3>Laravel ecosystem</h3>
+          <p class="note">My dragonstone.</p>
+          <ul>
+            <li class="main">Livewire</li><li>Reverb</li><li>Telescope</li><li>Blade</li><li>SweetAlert</li>
+          </ul>
+        </div>
+        <div class="row">
+          <h3>Front end</h3>
+          <p class="note">Where fire meets design.</p>
+          <ul>
+            <li>HTML5</li><li>CSS3</li><li class="main">Tailwind CSS</li><li>GSAP</li><li>jQuery</li>
+          </ul>
+        </div>
+        <div class="row">
+          <h3>Data</h3>
+          <p class="note">The vaults beneath the keep.</p>
+          <ul><li>MySQL</li><li>MongoDB</li></ul>
+        </div>
+        <div class="row">
+          <h3>Tools &amp; workflow</h3>
+          <p class="note">What every campaign needs.</p>
+          <ul><li>Git</li><li>GitHub</li><li>GitLab</li><li>VS Code</li><li>Postman</li></ul>
+        </div>
+        <div class="row">
+          <h3>The maester's corner</h3>
+          <p class="note">Ink and ledgers.</p>
+          <ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="code">
+    <div class="wrap">
+      <div class="head">
+        <span class="tag">The Code</span>
+        <h2>How the rogue prince works</h2>
+      </div>
+      <ol class="tenets">
+        <li><div><b>Brutal honesty in review</b><span>Your pull request will leave better than it arrived.</span></div></li>
+        <li><div><b>No spaghetti logic</b><span>Clear layers, clear names, clear responsibilities.</span></div></li>
+        <li><div><b>Loyal to the team</b><span>And still ready to challenge a bad decision before it ships.</span></div></li>
+        <li><div><b>Obsessed with UX</b><span>A confused user is a lost kingdom.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="forge">
+    <div class="wrap">
+      <div class="head">
+        <span class="tag">The Forge</span>
+        <h2>Every dragon has a command</h2>
+      </div>
+      <div class="forge">
+        <p class="intro">Mine ships with every project. Four bugs are waiting below. Run it.</p>
+        <div class="term">
+          <div class="top"><i></i><i></i><i></i><small>~/kingdom — zsh</small></div>
+<pre id="termOut"><span class="prompt">yassir@dragonstone:~/kingdom$</span> php artisan bugs:list
+<span class="dim">Found 4 enemies at the gates:</span>
+<span class="bug">  ✗ N+1 query in OrderController@index</span><span class="bug">  ✗ Undefined array key "user_id" in CheckoutService</span><span class="bug">  ✗ useEffect infinite loop in Dashboard.jsx</span><span class="bug">  ✗ z-index: 99999 on a modal nobody remembers</span><span id="termResult"><span class="prompt">yassir@dragonstone:~/kingdom$</span> <span class="dim">_</span></span></pre>
+        </div>
+        <div class="actions">
+          <button class="btn fire" id="dracarys" type="button">php artisan dracarys</button>
+          <button class="btn" id="resetForge" type="button" hidden>Summon them again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="soul">
+    <div class="wrap">
+      <div class="head">
+        <span class="tag">Mind &amp; Soul</span>
+        <h2>What I read between deployments</h2>
+      </div>
+      <div class="soul">
+        <div>
+          <h3>Story-driven games</h3>
+          <p>Where every choice bleeds into consequences. The same way a schema decision does, six months later.</p>
+        </div>
+        <div>
+          <h3>A Song of Ice and Fire</h3>
+          <p>The only gospel I kneel to. Waiting on <i>The Winds of Winter</i> taught me patience with slow CI.</p>
+        </div>
+        <div>
+          <h3>Dark fantasy &amp; intrigue</h3>
+          <p>Betrayal, politics, plot twists. It all tastes better with a good interface.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="raven">
+    <div class="wrap">
+      <div class="head">
+        <span class="tag">Send a Raven</span>
+        <h2>The dragon doesn't hide</h2>
+      </div>
+      <div class="raven">
+        <div class="line">
+          <span class="k">Email</span>
+          <a class="v" href="mailto:essayhyasser@gmail.com" id="email">essayhyasser@gmail.com</a>
+          <button type="button" id="copyEmail">Copy</button>
+        </div>
+        <div class="line">
+          <span class="k">LinkedIn</span>
+          <a class="v" href="https://www.linkedin.com/in/yasser-essayh" target="_blank" rel="noopener">linkedin.com/in/yasser-essayh</a>
+        </div>
+        <div class="line">
+          <span class="k">GitHub</span>
+          <a class="v" href="https://github.com/FanKiing" target="_blank" rel="noopener">github.com/FanKiing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="ar" lang="ar">ياسر</p>
+    <p>Winter is coming. My deployment is already live.</p>
+    <small>© <span id="year">2026</span> Yassir Essayh · Blood of the dragon, fire of the keyboard</small>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- embers ---------- */
+  var canvas = document.getElementById("embers");
+  var ctx = canvas.getContext("2d");
+  var embers = [], w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var mouse = { x: -999, y: -999 };
+
+  function size() {
+    var r = canvas.getBoundingClientRect();
+    w = r.width; h = r.height;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function spawn(y) {
+    return {
+      x: Math.random() * w,
+      y: y === undefined ? h + Math.random() * 40 : y,
+      r: Math.random() * 1.8 + 0.6,
+      vy: Math.random() * 0.7 + 0.25,
+      vx: (Math.random() - 0.5) * 0.3,
+      life: Math.random() * 0.6 + 0.4,
+      hue: 18 + Math.random() * 26
+    };
+  }
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    for (var i = 0; i < embers.length; i++) {
+      var e = embers[i];
+      var fade = Math.max(0, Math.min(1, e.y / h)) * e.life;
+      ctx.beginPath();
+      ctx.fillStyle = "hsla(" + e.hue + ", 90%, 58%, " + fade + ")";
+      ctx.shadowColor = "hsla(" + e.hue + ", 95%, 55%, " + fade + ")";
+      ctx.shadowBlur = 8;
+      ctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+  function tick() {
+    for (var i = 0; i < embers.length; i++) {
+      var e = embers[i];
+      var dx = e.x - mouse.x, dy = e.y - mouse.y, d = dx * dx + dy * dy;
+      if (d < 9000) { e.vx += dx / 3000; e.vy += 0.02; }
+      e.x += e.vx + Math.sin((e.y + i) / 40) * 0.2;
+      e.y -= e.vy;
+      e.vx *= 0.98;
+      if (e.y < -10) embers[i] = spawn();
+    }
+    draw();
+    requestAnimationFrame(tick);
+  }
+  size();
+  var count = Math.round(Math.min(90, w / 12));
+  for (var i = 0; i < count; i++) embers.push(spawn(Math.random() * h));
+  window.addEventListener("resize", size);
+  canvas.parentElement.addEventListener("pointermove", function (ev) {
+    var r = canvas.getBoundingClientRect();
+    mouse.x = ev.clientX - r.left; mouse.y = ev.clientY - r.top;
+  });
+  canvas.parentElement.addEventListener("pointerleave", function () { mouse.x = mouse.y = -999; });
+  if (reduce) draw(); else requestAnimationFrame(tick);
+
+  /* ---------- dracarys ---------- */
+  var btn = document.getElementById("dracarys");
+  var reset = document.getElementById("resetForge");
+  var result = document.getElementById("termResult");
+  var bugs = Array.prototype.slice.call(document.querySelectorAll(".term .bug"));
+  var idle = result.innerHTML;
+
+  btn.addEventListener("click", function () {
+    btn.disabled = true;
+    var start = performance.now();
+    result.innerHTML = '<span class="prompt">yassir@dragonstone:~/kingdom$</span> php artisan dracarys\n';
+    bugs.forEach(function (b, i) {
+      var step = reduce ? 0 : 520;
+      setTimeout(function () { b.classList.add("burning"); }, i * step);
+      setTimeout(function () {
+        b.classList.remove("burning"); b.classList.add("ash");
+        if (i === bugs.length - 1) {
+          var secs = ((performance.now() - start) / 1000).toFixed(2);
+          result.innerHTML += '<span class="ok">  ✓ ' + bugs.length + ' bugs reduced to ash in ' + secs + 's</span>\n' +
+                              '<span class="ok">  ✓ Tests green. The realm is at peace.</span>\n' + idle;
+          reset.hidden = false;
+        }
+      }, i * step + (reduce ? 0 : 700));
+    });
+  });
+  reset.addEventListener("click", function () {
+    bugs.forEach(function (b) { b.classList.remove("ash", "burning"); });
+    result.innerHTML = idle;
+    reset.hidden = true;
+    btn.disabled = false;
+  });
+
+  /* ---------- copy email ---------- */
+  var copy = document.getElementById("copyEmail");
+  var email = document.getElementById("email");
+  copy.addEventListener("click", function () {
+    var done = function () { copy.textContent = "Copied"; setTimeout(function () { copy.textContent = "Copy"; }, 1600); };
+    var select = function () { var r = document.createRange(); r.selectNodeContents(email); var s = getSelection(); s.removeAllRanges(); s.addRange(r); copy.textContent = "Selected"; };
+    try { navigator.clipboard.writeText(email.textContent).then(done, select); } catch (e) { select(); }
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
