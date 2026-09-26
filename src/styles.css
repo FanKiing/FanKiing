@@ -1,190 +1,147 @@
-:root {
-  color-scheme: dark;
-  --obsidian: #0d0a0c;
-  --soot: #16111a;
-  --soot-2: #1f1822;
-  --blood: #a3161b;
-  --flame: #e8702a;
-  --gold: #c9a45c;
-  --bone: #e9e1d3;
-  --ash: #948a95;
-  --line: rgba(201, 164, 92, 0.22);
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
-  --display: "Cinzel", "Trajan Pro", Georgia, serif;
-  --body: "Spectral", Georgia, "Times New Roman", serif;
-  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
-  --arabic: "Aref Ruqaa", "Amiri", "Noto Naskh Arabic", serif;
+/* Design tokens. The palette is deliberately dark-only: warm ink, bone text,
+   one Targaryen crimson accent and ember orange reserved for glows. */
+@theme {
+  --color-ink: #0a0908;
+  --color-ink-2: #121010;
+  --color-ink-3: #1b1716;
+  --color-bone: #ece6dc;
+  --color-mute: #8f8780;
+  --color-crimson: #b4232a;
+  --color-ember: #f06a2c;
+  --color-gold: #c8a86a;
 
-  --wrap: 1080px;
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+  --font-display: "Cinzel", "Trajan Pro", Georgia, serif;
+  --font-arabic: "Aref Ruqaa", "Amiri", "Noto Naskh Arabic", serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-spin-slow: spin 60s linear infinite;
+
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--obsidian);
-  color: var(--bone);
-  font: 400 1.075rem/1.7 var(--body);
-  -webkit-font-smoothing: antialiased;
-}
-a { color: var(--gold); text-underline-offset: 3px; }
-a:hover { color: var(--flame); }
-:focus-visible { outline: 2px solid var(--flame); outline-offset: 3px; border-radius: 2px; }
-::selection { background: var(--blood); color: var(--bone); }
-
-.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: 20px; }
-.wrap > *, .hero .wrap > div, .ledger > *, .soul > *, .facts > * { min-width: 0; }
-
-/* ---------- top bar ---------- */
-.bar {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
-  background: rgba(13, 10, 12, 0.82);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
-}
-.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
-.bar .mark { font: 700 0.95rem var(--display); letter-spacing: 0.18em; color: var(--bone); text-decoration: none; }
-.bar nav { display: flex; gap: 22px; flex-wrap: wrap; }
-.bar nav a { font: 500 0.78rem var(--display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ash); text-decoration: none; }
-.bar nav a:hover { color: var(--gold); }
-
-/* ---------- hero ---------- */
-.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
-.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.hero::after {
-  content: ""; position: absolute; inset: auto 0 0 0; height: 45%;
-  background: radial-gradient(ellipse 70% 100% at 50% 100%, rgba(163, 22, 27, 0.28), transparent 70%);
-  pointer-events: none;
-}
-.hero .wrap {
-  position: relative; z-index: 1;
-  display: grid; grid-template-columns: 1.35fr 1fr; align-items: center; gap: 48px;
-  padding-block: 88px 96px;
-}
-.eyebrow { font: 500 0.78rem var(--display); letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin: 0 0 18px; }
-h1 {
-  font: 900 clamp(3.2rem, 9vw, 6.6rem)/0.92 var(--display);
-  letter-spacing: 0.02em; margin: 0;
-  background: linear-gradient(180deg, var(--bone) 30%, #b9a88f 100%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-h1 .silent { position: relative; display: inline-block; color: var(--ash); -webkit-text-fill-color: var(--ash); opacity: 0.55; }
-h1 .silent::after {
-  content: ""; position: absolute; left: -4%; right: -4%; top: 52%; height: 0.08em;
-  background: var(--blood); transform: rotate(-8deg);
-}
-.sub { font: 600 clamp(1.05rem, 2.2vw, 1.3rem) var(--display); letter-spacing: 0.08em; color: var(--bone); margin: 22px 0 0; }
-.sub span { color: var(--blood); padding-inline: 0.35em; }
-.lede { max-width: 34em; color: var(--ash); margin: 20px 0 0; font-size: 1.12rem; }
-.lede em { color: var(--bone); }
-.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
-.btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  font: 700 0.8rem var(--display); letter-spacing: 0.16em; text-transform: uppercase;
-  padding: 14px 22px; text-decoration: none; cursor: pointer;
-  border: 1px solid var(--gold); color: var(--gold); background: transparent;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-}
-.btn:hover { background: var(--gold); color: var(--obsidian); }
-.btn.fire { background: var(--blood); border-color: var(--blood); color: var(--bone); }
-.btn.fire:hover { background: var(--flame); border-color: var(--flame); color: var(--obsidian); box-shadow: 0 0 28px rgba(232, 112, 42, 0.45); }
-
-.seal { justify-self: center; width: min(360px, 100%); aspect-ratio: 1; max-width: 100%; }
-.seal svg { width: 100%; height: 100%; display: block; overflow: visible; }
-.seal .ring-text { animation: turn 60s linear infinite; transform-origin: 200px 200px; }
-@keyframes turn { to { transform: rotate(360deg); } }
-
-/* ---------- sections ---------- */
-section { padding-block: 96px; border-bottom: 1px solid var(--line); }
-.head { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: baseline; margin-bottom: 44px; }
-.head .tag { font: 500 0.78rem var(--display); letter-spacing: 0.24em; text-transform: uppercase; color: var(--blood); }
-h2 { font: 700 clamp(1.9rem, 4.4vw, 3rem)/1.1 var(--display); letter-spacing: 0.03em; margin: 0; text-wrap: balance; }
-.body-col { margin-left: 260px; max-width: 40em; }
-.body-col p { margin: 0 0 1.1em; }
-.body-col p:first-child::first-letter {
-  float: left; font: 900 4.2rem/0.8 var(--display); color: var(--blood);
-  padding: 0.08em 0.12em 0 0;
-}
-.pull {
-  margin: 36px 0 0; padding: 4px 0 4px 22px; border-left: 2px solid var(--blood);
-  font-style: italic; color: var(--bone); font-size: 1.2rem;
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    background: var(--color-ink);
+  }
+  body {
+    @apply bg-ink text-bone font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background: var(--color-crimson);
+    color: var(--color-bone);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
 }
 
-/* chronicle facts */
-.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 48px 0 0 260px; background: var(--line); border: 1px solid var(--line); }
-.facts div { background: var(--obsidian); padding: 20px 22px; }
-.facts dt { font: 500 0.72rem var(--display); letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); }
-.facts dd { margin: 6px 0 0; font: 600 1.05rem var(--body); color: var(--bone); }
+@layer components {
+  .wrap {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
+  }
 
-/* arsenal ledger */
-.ledger { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 56px; margin-left: 260px; }
-.ledger .row { border-top: 1px solid var(--line); padding-block: 20px 22px; }
-.ledger h3 { font: 700 0.95rem var(--display); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin: 0 0 4px; }
-.ledger .note { font-style: italic; color: var(--ash); font-size: 0.95rem; margin: 0 0 12px; }
-.ledger ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.ledger li { font: 400 0.84rem var(--mono); padding: 4px 10px; background: var(--soot); border: 1px solid var(--soot-2); color: var(--bone); }
-.ledger li.main { border-color: rgba(163, 22, 27, 0.6); color: #f3d9c9; }
+  /* Film grain over the whole page, so the flat blacks feel like a material. */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
 
-/* code of conduct */
-.tenets { list-style: none; margin: 0 0 0 260px; padding: 0; display: grid; gap: 0; counter-reset: t; }
-.tenets li { display: grid; grid-template-columns: 70px 1fr; gap: 20px; padding-block: 24px; border-top: 1px solid var(--line); counter-increment: t; }
-.tenets li::before { content: counter(t, upper-roman) "."; font: 700 1.3rem var(--display); color: var(--blood); }
-.tenets b { display: block; font: 700 1.2rem var(--display); letter-spacing: 0.04em; color: var(--bone); margin-bottom: 4px; }
-.tenets span { color: var(--ash); }
+  /* The silent "s" in Yassir: dimmed and struck through in crimson. */
+  .silent {
+    position: relative;
+    display: inline-block;
+    color: color-mix(in oklab, var(--color-bone) 28%, transparent);
+  }
+  .silent::after {
+    content: "";
+    position: absolute;
+    left: -6%;
+    right: -6%;
+    top: 50%;
+    height: 0.06em;
+    background: var(--color-crimson);
+    transform: rotate(-10deg);
+  }
 
-/* dracarys terminal */
-.forge { margin-left: 260px; }
-.forge p.intro { color: var(--ash); max-width: 38em; margin: 0 0 24px; }
-.term { background: #0a0709; border: 1px solid var(--soot-2); box-shadow: 0 30px 80px -40px rgba(163, 22, 27, 0.55); }
-.term .top { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--soot-2); }
-.term .top i { width: 10px; height: 10px; border-radius: 50%; background: var(--soot-2); }
-.term .top i:first-child { background: var(--blood); }
-.term .top small { margin-left: 10px; font: 400 0.78rem var(--mono); color: var(--ash); }
-.term pre { margin: 0; padding: 22px 20px 26px; font: 400 0.9rem/1.85 var(--mono); overflow-x: auto; white-space: pre; }
-.term .prompt { color: var(--gold); }
-.term .dim { color: var(--ash); }
-.term .bug { display: block; color: #e7a6a0; transition: color 0.5s, text-shadow 0.5s, opacity 0.8s; }
-.term .bug.burning { color: var(--flame); text-shadow: 0 0 10px var(--flame), 0 0 22px var(--blood); }
-.term .bug.ash { color: #4a4249; text-decoration: line-through; text-shadow: none; }
-.term .ok { color: #d7b56d; }
-.forge .actions { margin-top: 22px; }
+  /* Cards light up under the pointer. --mx / --my are set from JS. */
+  .spotlight {
+    position: relative;
+    isolation: isolate;
+  }
+  .spotlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(180 35 42 / 0.16), transparent 45%);
+  }
+  .spotlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s;
+    background: radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), rgb(240 106 44 / 0.55), transparent 50%);
+    mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  }
+  .spotlight:hover::before,
+  .spotlight:hover::after {
+    opacity: 1;
+  }
 
-/* mind & soul */
-.soul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-left: 260px; }
-.soul h3 { font: 700 1.05rem var(--display); letter-spacing: 0.06em; margin: 0 0 8px; color: var(--gold); }
-.soul p { margin: 0; color: var(--ash); }
-
-/* raven */
-.raven { margin-left: 260px; display: grid; gap: 18px; }
-.raven .line { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-block: 18px; border-top: 1px solid var(--line); }
-.raven .k { width: 110px; font: 500 0.75rem var(--display); letter-spacing: 0.2em; text-transform: uppercase; color: var(--ash); }
-.raven .v { font: 600 1.15rem var(--body); color: var(--bone); user-select: all; word-break: break-all; }
-.raven button { font: 600 0.72rem var(--display); letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 12px; background: transparent; color: var(--gold); border: 1px solid var(--line); cursor: pointer; }
-.raven button:hover { border-color: var(--gold); }
-
-footer { padding-block: 64px 80px; text-align: center; }
-footer .ar { font: 700 2.4rem/1 var(--arabic); color: var(--blood); margin: 0 0 12px; }
-footer p { margin: 0; color: var(--ash); font-style: italic; }
-footer small { display: block; margin-top: 18px; font: 400 0.75rem var(--mono); color: #5d545d; }
-
-/* ---------- responsive ---------- */
-@media (max-width: 900px) {
-  .hero .wrap { grid-template-columns: 1fr; padding-block: 56px 64px; gap: 36px; }
-  .seal { width: min(260px, 70%); order: -1; justify-self: start; }
-  .head { grid-template-columns: 1fr; gap: 10px; }
-  .body-col, .facts, .ledger, .tenets, .forge, .soul, .raven { margin-left: 0; }
-  .ledger { grid-template-columns: 1fr; }
-  .soul { grid-template-columns: 1fr; gap: 28px; }
-  section { padding-block: 72px; }
+  .marquee-mask {
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
 }
-@media (max-width: 560px) {
-  .bar nav { display: none; }
-  .facts { grid-template-columns: 1fr; }
-  .tenets li { grid-template-columns: 44px 1fr; gap: 12px; }
-  .term pre { font-size: 0.78rem; }
+
+/* Reading-progress bar driven purely by CSS scroll timelines. */
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    transform-origin: 0 50%;
+    animation: grow-x linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes grow-x {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
 }
+@supports not (animation-timeline: scroll()) {
+  .scroll-progress { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .seal .ring-text { animation: none; }
-  .term .bug { transition: none; }
+  .animate-marquee,
+  .animate-spin-slow {
+    animation: none;
+  }
 }
